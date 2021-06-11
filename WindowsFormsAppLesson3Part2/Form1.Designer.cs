@@ -43,7 +43,7 @@ namespace WindowsFormsAppLesson3Part2
             this.NameLbl = new System.Windows.Forms.Label();
             this.NameTxtBox = new System.Windows.Forms.TextBox();
             this.NamesListBox = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FileNameTxtBox = new System.Windows.Forms.TextBox();
             this.FileNameLbl = new System.Windows.Forms.Label();
             this.LoadBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -75,7 +75,7 @@ namespace WindowsFormsAppLesson3Part2
             // AddBtn
             // 
             this.AddBtn.AutoSize = true;
-            this.AddBtn.Location = new System.Drawing.Point(212, 467);
+            this.AddBtn.Location = new System.Drawing.Point(219, 402);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(125, 41);
             this.AddBtn.TabIndex = 11;
@@ -86,7 +86,8 @@ namespace WindowsFormsAppLesson3Part2
             // ChangedBtn
             // 
             this.ChangedBtn.AutoSize = true;
-            this.ChangedBtn.Location = new System.Drawing.Point(212, 396);
+            this.ChangedBtn.Enabled = false;
+            this.ChangedBtn.Location = new System.Drawing.Point(219, 478);
             this.ChangedBtn.Name = "ChangedBtn";
             this.ChangedBtn.Size = new System.Drawing.Size(125, 41);
             this.ChangedBtn.TabIndex = 10;
@@ -188,13 +189,14 @@ namespace WindowsFormsAppLesson3Part2
             this.NamesListBox.Name = "NamesListBox";
             this.NamesListBox.Size = new System.Drawing.Size(236, 314);
             this.NamesListBox.TabIndex = 1;
+            this.NamesListBox.SelectedIndexChanged += new System.EventHandler(this.NamesListBox_SelectedIndexChanged);
             // 
-            // textBox1
+            // FileNameTxtBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(896, 387);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 20);
-            this.textBox1.TabIndex = 2;
+            this.FileNameTxtBox.Location = new System.Drawing.Point(896, 387);
+            this.FileNameTxtBox.Name = "FileNameTxtBox";
+            this.FileNameTxtBox.Size = new System.Drawing.Size(182, 20);
+            this.FileNameTxtBox.TabIndex = 2;
             // 
             // FileNameLbl
             // 
@@ -209,6 +211,7 @@ namespace WindowsFormsAppLesson3Part2
             // LoadBtn
             // 
             this.LoadBtn.AutoSize = true;
+            this.LoadBtn.Enabled = false;
             this.LoadBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LoadBtn.Location = new System.Drawing.Point(779, 442);
             this.LoadBtn.Name = "LoadBtn";
@@ -216,6 +219,7 @@ namespace WindowsFormsAppLesson3Part2
             this.LoadBtn.TabIndex = 11;
             this.LoadBtn.Text = "Load";
             this.LoadBtn.UseVisualStyleBackColor = true;
+            this.LoadBtn.Click += new System.EventHandler(this.LoadBtn_Click);
             // 
             // SaveBtn
             // 
@@ -227,6 +231,7 @@ namespace WindowsFormsAppLesson3Part2
             this.SaveBtn.TabIndex = 12;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // Form1
             // 
@@ -237,7 +242,7 @@ namespace WindowsFormsAppLesson3Part2
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.LoadBtn);
             this.Controls.Add(this.FileNameLbl);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.FileNameTxtBox);
             this.Controls.Add(this.NamesListBox);
             this.Controls.Add(this.AnketGroupBox);
             this.Name = "Form1";
@@ -266,7 +271,7 @@ namespace WindowsFormsAppLesson3Part2
         private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.Button ChangedBtn;
         private System.Windows.Forms.ListBox NamesListBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox FileNameTxtBox;
         private System.Windows.Forms.Label FileNameLbl;
         private System.Windows.Forms.Button LoadBtn;
         private System.Windows.Forms.Button SaveBtn;
